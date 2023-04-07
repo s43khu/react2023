@@ -1,0 +1,90 @@
+.Works{
+    height:100vh;
+    scroll-snap-align: center;
+    display:flex;
+    justify-content: center;
+    .container{
+        width: 1400px;
+        display: flex;
+        justify-content: space-between;
+        .left{
+            flex: 1;
+            display: flex;
+            align-items: center;
+
+            ul{
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                li{
+                    font-size: 95px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    color: transparent;
+                    -webkit-text-stroke: 1px white;
+                    position:relative;
+                   
+                    &:hover{   
+                            animation: moveText 0.5s linear both;
+                            @keyframes moveText {
+                                to{
+                                    color: white;
+                                }
+                                
+                            }
+                    }
+
+                }
+            }
+
+        }
+        .right{
+
+            img{
+                height:600px;
+                width: 600px;
+                object-fit: contain;
+                margin: auto;
+                margin: auto;
+                margin-top: 25%;
+                animation: animate 2s infinite ease alternate;
+
+                @keyframes animate {
+                   100% {
+                    transform: translateY(25px);
+                    }
+                }
+                
+            }
+
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .Works {
+          height: auto;
+          .container {
+            width: 100%;
+            flex-direction: column;
+            .left {
+              flex: none;
+              ul {
+                justify-content: center;
+                text-align: center;
+                li {
+                  font-size: 48px;
+                }
+              }
+            }
+            .right {
+              margin-top: 5%;
+              img {
+                height: 300px;
+                width: 300px;
+              }
+            }
+          }
+        }
+      }
+
+}

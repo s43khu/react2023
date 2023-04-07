@@ -1,0 +1,133 @@
+.Hero{
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+    scroll-snap-align: center;
+    align-items: center;
+    justify-content: space-between;
+
+    .Container{
+        display: flex;
+        height:100vh;
+        scroll-snap-align: center;
+        justify-content: space-between;
+        .left{
+            flex:2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            .title{
+                font-size: 70px;
+            }
+            .extra{
+                gap: 20px;
+                .line{
+                    height: 30px;
+                    cursor: pointer;
+
+                }
+                .extra-word{
+                    margin-top: 10px;
+                    font-size: 20px;
+                }
+            }
+            .about-this{
+                font-size: large;
+                color: rgb(216, 228, 240);
+            }
+            button{
+                background-color: rgb(226, 41, 143);
+                width: 300px;
+                height:40px;
+                border:none;
+                border-radius: 40px;
+                cursor: pointer;
+                transition: .2s ease-in-out;
+
+                &:hover{
+                    background-color: rgb(89, 186, 227);
+                }
+                &:active{
+                    background-color: rgb(13, 133, 193);
+                }
+            }
+
+        }
+        .right{
+            flex:3;
+            display: flex;
+            .image{
+                height:500px;
+                width: 500px;
+                object-fit: contain;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+                animation: animate 2s infinite ease alternate;
+
+                @keyframes animate {
+                   100% {
+                    transform: translateY(30px);
+                    }
+                }
+            }
+
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .Container {
+          flex-direction: column;
+          align-items: center;
+          height: 200vh;
+          margin-top: 80px;
+    
+          .left {
+            flex: 1;
+    
+            .title {
+              text-align: center;
+              font-size: 50px;
+            }
+    
+            .extra {
+              flex-direction: column;
+              align-items: center;
+    
+              .line {
+                height: 20px;
+              }
+    
+              .extra-word {
+                margin-top: 5px;
+                font-size: 18px;
+              }
+            }
+    
+            .about-this {
+              text-align: center;
+              font-size: medium;
+            }
+    
+            button {
+              width: 200px;
+              height: 30px;
+              font-size: 14px;
+            }
+          }
+    
+          .right {
+            flex: 1;
+    
+            .image {
+              height: 300px;
+              width: 300px;
+            }
+          }
+        }
+      }
+    }
+
